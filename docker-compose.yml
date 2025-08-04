@@ -4,8 +4,8 @@ services:
   feedme:
     build: .
     ports:
-      - "3000:3000"
+      - "3008:3008"
     volumes:
       - ./.env:/app/.env
     container_name: feedme
-    restart: unless-stopped 
+    restart: unless-stopped
