@@ -169,6 +169,20 @@
     容器将根据 `config/crontab-docker` 中的配置（默认为每 3 小时）自动执行 `pnpm update-feeds` 和 `pnpm build`，并重新启动服务。
     如需修改更新频率，请编辑 `config/crontab-docker` 文件中的 cron 表达式（例如 `0 */6 * * *` 表示每 6 小时执行一次）。
 
+6.  **手动更新**
+    在容器内执行：
+    ```bash
+    docker exec -it feedme bash
+    pnpm update-feeds
+    pnpm build
+    pkill -f "serve out" && npx serve out -l 3008 &
+    ```
+    或在宿主机执行：
+    ```bash
+    docker exec feedme pnpm update-feeds
+    docker-compose restart
+    ```
+
 ## 开发指南
 
 1. **克隆仓库**
