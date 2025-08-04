@@ -4,7 +4,7 @@
 cd "$(dirname "$0")/.."
 
 LOG_FILE="/var/log/cron.log"
-PORT=3000
+PORT=3008
 TEMP_DIR="/tmp/feedme-build"
 OUTPUT_DIR="/app/out"
 

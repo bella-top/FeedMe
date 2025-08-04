@@ -32,10 +32,10 @@ COPY scripts/entrypoint.sh /app/scripts/
 RUN chmod +x /app/scripts/update_and_serve.sh /app/scripts/entrypoint.sh
 
 # Expose the port the application will run on
-EXPOSE 3000
+EXPOSE 3008
 
 # Set the entrypoint to our custom script
 ENTRYPOINT ["/app/scripts/entrypoint.sh"]
 
 # Remove the old CMD, as ENTRYPOINT handles the startup
-# CMD ["pnpm", "dev"] 
+# CMD ["pnpm", "dev"]
